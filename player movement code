@@ -1,0 +1,35 @@
+
+function controller(){
+esquerda = keyboard_check(vk_left); // recebe o trigger das teclas
+cima = keyboard_check(vk_up);
+baixo = keyboard_check(vk_down);
+direita = keyboard_check(vk_right);
+
+hveloc = (direita - esquerda) * veloc;
+vveloc = (baixo - cima) * veloc;
+
+col_check();
+
+}
+
+function col_check(){
+if place_meeting(x + hveloc, y, obj_col){ // bloco de instruções pra detectar colisões no eixo x
+while !place_meeting(x + sign(hveloc),y,obj_col){
+x += sign(hveloc)
+
+}
+hveloc = 0;
+}
+
+x += hveloc; //adiciona a movimentação no eixo x
+
+if place_meeting(x, y + vveloc, obj_col){// bloco de instruções pra detectar colisões no eixo y
+while !place_meeting(x,y + sign(vveloc),obj_col){
+y += sign(vveloc)
+
+}
+vveloc = 0;
+}
+
+y += vveloc; //adiciona a movimentação no eixo y
+}
