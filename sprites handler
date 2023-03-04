@@ -1,0 +1,41 @@
+function last_dir()
+{
+dirEsquerda = keyboard_check(vk_left);
+dirCima = keyboard_check(vk_up);
+dirBaixo = keyboard_check(vk_down);
+dirDireita = keyboard_check(vk_right);
+
+if dirEsquerda{
+dir = "esquerda";
+}
+
+if dirCima{
+dir = "Cima";
+}
+    if dirBaixo{
+dir = "baixo";
+}
+
+    if dirDireita{
+dir = "direita";
+}
+}
+
+function animation_handler(){
+
+switch (dir)
+{
+case "esquerda" :
+sprite_index = idle_left;
+break;
+case "cima" :
+sprite_index = idle_up;
+break;
+case "baixo":
+sprite_index = idle_down;
+break;
+case "direita":
+sprite_index = idle_right;
+break;
+
+}
