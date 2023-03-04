@@ -1,0 +1,37 @@
+player chat handler:
+
+if place_meeting(x + hveloc, y, sans) or place_meeting(x , y + vveloc, sans){
+
+switch (textbox.isTalking)
+{
+
+case false:
+if keyboard_check_pressed(ord("Z")) and textbox.isTalking == false
+{
+
+    textbox.txt = sans.sansQuote;
+    textbox.isTalking = true;
+
+}
+break;
+case true:
+if keyboard_check_pressed(ord("Z")) && textbox.isTalking == true
+{
+textbox.txt = "";
+textbox.isTalking = false;
+}
+break;
+}
+/*
+if keyboard_check_pressed(ord("Z")) and textbox.isTalking == false
+{
+
+textbox.txt = sans.sansQuote;
+textbox.isTalking = true;
+}
+
+if keyboard_check_pressed(ord("Z")) && textbox.isTalking == true
+{
+textbox.txt = "";
+textbox.isTalking = false;
+}
